@@ -6,6 +6,12 @@ git add <hello.txt>  # 把所有要提交的文件修改放到暂存区
 git commit -m 'add a file' # 把暂存区的所有内容提交到当前分支
 git status #掌握工作区状态
 git diff #查看文件修改内容
+
+#查看工作区和版本库的差别
+git diff 文件名
+#查看暂存区和版本库里面最新版本的区别：
+git diff HEAD -- readme.txt
+
 git log #查看提交历史
 	git log --pretty=oneline
 git reset --hard HEAD^ #回退到上一个版本
@@ -39,6 +45,7 @@ git branch <name> #创建分支
 git checkout <name> #切换分支
 git merge <name> #合并某个分支到当前分支
 git branch -d <name> #删除分支
+git branch -D 分支名(强制删除未合并的分支)
 git log --graph #查看分支合并图
 git merge --no-ff -m 'message' dev #禁用Fast forward合并dev分支
 	#本次合并要创建新的commit，所以要加上-m参数，把commit描述写进去
@@ -54,6 +61,7 @@ git remote #查看远程仓库
 git remote -v #查看远程库详细信息
 
 git pull #抓取远程提交
+git push origin branch-name推送就能成功！
 git checkout -b branch-name origin/branch-name #在本地创建和远程分支对应的分支
 git branch --set-upstream branch-name origin/branch-name #建立本地分支和远程分支的关联
 
